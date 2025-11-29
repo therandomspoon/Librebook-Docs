@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Librebook API Key Documentation</title>
+  <link rel="stylesheet" href="../dev10.css">
+</head>
+<body>
+  <header>
+  	<h1 id="headl">Librebook Documentation</h1>
+  </header>
+  <div id="sidebar">
+    <a class="nav-button" href="../index.html">Return to home</a>
+    <h3>User data</h3>
+    <a class="nav-button" href="allmess.html">Deleting All Messages</a>
+    <a class="nav-button" href="specmess.html">Deleting Specific Messages</a>
+    <a class="nav-button" href="account.html">Deleting Your Account</a>
+  </div>
+  <div id="messages">
+    <h2>What is an API Key?</h2>
+    <p>An API key is a unique identifier that allows developers to access the Librebook API securely. It acts as a password for programmatic requests.</p>
+    <h2>Generating an API Key</h2>
+    <p>To generate a new API key:</p>
+    <ol>
+      <li>Login to your Librebook account.</li>
+      <li>Navigate to <strong>Settings → API key hub</strong>.</li>
+      <li>Click <strong>Create New API Key</strong>.</li>
+      <li>This key is unique to your user and can be viewed again on this page.</li>
+    </ol>
+    <h2>Using the API Key</h2>
+    <p>The Librebook API system has multiple different methods that includes the following:</p>
+    <ul>
+        <li>Send a message from your account <pre><code>send_message</code></pre></li>
+        <li>Get a list of all the public messages you have sent <pre><code>getall_message</code></pre></li>
+		<li>Get a list of the people you follow <pre><code>people_you_follow</code></pre></li>
+		<li>Send a direct message to another user <pre><code>dm_sendmessage</code></pre></li>
+    </ul>
+	<h2>API request format</h2>
+	<p>To use your api key, simply add this onto the end of the url of the instance you made your key on (e.g. librebok.co.uk).</p>
+	<pre><code>[url]/api.php?apikey=[API KEY HERE]&function=[FUNCTION ID HERE]</code></pre>
+	<p>Example:</p>
+	<pre><code>[url]/api.php?apikey=[API KEY HERE]&function=getall_message</code></pre>
+    <h2>Security Best Practices</h2>
+    <ul>
+      <li>Never share your API key publicly.</li>
+      <li>Do not store keys directly in frontend code.</li>
+    </ul>
+    <h2>Revoking an API Key</h2>
+    <p>If your key is compromised or no longer needed, revoke it:</p>
+    <ol>
+      <li>Login to your Librebook account.</li>
+      <li>Navigate to <strong>Settings → API key hub</strong>.</li>
+      <li>Click <strong>Create New API Key</strong>.</li>
+      <li>This will generate a new key that will replace your old one.</li>
+    </ol>
+  </div>
+</body>
+</html>
