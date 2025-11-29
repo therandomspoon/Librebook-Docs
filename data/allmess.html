@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Librebook API Key Documentation</title>
+  <link rel="stylesheet" href="../dev10.css">
+</head>
+<body>
+  <header>
+  	<h1 id="headl">Librebook Documentation</h1>
+  </header>
+  <div id="sidebar">
+    <a class="nav-button" href="../index.html">Return to home</a>
+    <h3>User data</h3>
+    <a class="nav-button" href="api.html">API Key</a>
+    <a class="nav-button" href="allmess.html">Deleting All Messages</a>
+    <a class="nav-button" href="account.html">Deleting Your Account</a>
+  </div>
+  <div id="messages">
+    <h2>Control Your Precence</h2>
+    <p>Librebook's main feature is the freedom it gives to it's users. One of these freedoms is the ability it gives it's users to be forgotten. This page will explain how to delete all messages that you have sent on Librebook.</p>
+    <h2>Deleteing All Messages</h2>
+    <p>To delete all messages:</p>
+    <ol>
+      <li>Login to your Librebook account.</li>
+      <li>Navigate to <strong>Settings → User Data Center</strong>.</li>
+      <li>At the top of the page will be a large red button labelled "Delete All Messages".</li>
+      <li>Press this button to delete all messages that you have sent. <warning>Warning! This action is not reversible!</warning></li>
+    </ol>
+	<h2>Developer information</h2>
+	<p>The specific message deletion system works by printing an input in a form under the message with its specific message ID. In the Librebook SQL structure, the messages are stored with the format ID | Name | Message | TIMESTAMP | NSFW. As each message has a unique ID, when the input is echoed by the PHP scripting, the ID is injected into the input's value. Below is the relevant semgent:</p>
+	<pre><code>&lt;input type='hidden' name='id' value='{$id}'&gt;;</code></pre>
+	<p>For example, if the message was the 108th message ever sent on Librebook:</p>
+	<pre><code>&lt;input type='hidden' name='id' value='108'&gt;;</code></pre>
+  </div>
+</body>
+</html>
