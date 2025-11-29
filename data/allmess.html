@@ -29,8 +29,8 @@
       <li>Press this button to delete all messages that you have sent. <warning>Warning! This action is not reversible!</warning></li>
     </ol>
 	<h2>Developer information</h2>
-	<p>The specific message deletion system works by printing an input in a form under the message with its specific message ID. In the Librebook SQL structure, the messages are stored with the format ID | Name | Message | TIMESTAMP | NSFW. As each message has a unique ID, when the input is echoed by the PHP scripting, the ID is injected into the input's value. Below is the relevant semgent:</p>
-	<pre><code>&lt;input type='hidden' name='id' value='{$id}'&gt;;</code></pre>
+	<p>The all messages deletion system works by printing an input in a form under the message at the top of the page. In the Librebook SQL structure, the messages are stored with the format ID | Name | Message | TIMESTAMP | NSFW. The PHP scripting deletes all messages sent from the user. Below is the relevant semgent of PHP script:</p>
+	<pre><code>&lt;$sql = "DELETE FROM messages WHERE name = :user_name"; \n $stmt = $pdo->prepare($sql); \n $stmt->bindParam(':user_name', $user_name, PDO::PARAM_STR);'&gt;;</code></pre>
 	<p>For example, if the message was the 108th message ever sent on Librebook:</p>
 	<pre><code>&lt;input type='hidden' name='id' value='108'&gt;;</code></pre>
   </div>
